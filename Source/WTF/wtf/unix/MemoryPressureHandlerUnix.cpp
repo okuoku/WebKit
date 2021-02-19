@@ -132,7 +132,8 @@ static size_t processMemoryUsage()
 
     return static_cast<size_t>(info.ki_rssize - info.ki_tsize) * pageSize;
 #else
-#error "Missing a platform specific way of determining the memory usage"
+    return 0;
+//#error "Missing a platform specific way of determining the memory usage"
 #endif
 }
 
@@ -153,7 +154,7 @@ void MemoryPressureHandler::respondToMemoryPressure(Critical critical, Synchrono
 void MemoryPressureHandler::platformReleaseMemory(Critical)
 {
 #if HAVE(MALLOC_TRIM)
-    malloc_trim(0);
+    //malloc_trim(0);
 #endif
 }
 
