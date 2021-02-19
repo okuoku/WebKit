@@ -52,6 +52,13 @@ This will define the following variables in your project:
 
 #]=======================================================================]
 
+set(Cairo_FOUND 1)
+set(Cairo_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/cairo/src
+    )
+
+return()
+
 find_package(PkgConfig QUIET)
 pkg_check_modules(PC_CAIRO QUIET cairo)
 set(Cairo_COMPILE_OPTIONS ${PC_CAIRO_CFLAGS_OTHER})

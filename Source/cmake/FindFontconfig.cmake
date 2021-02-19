@@ -52,6 +52,13 @@ This will define the following variables in your project:
 
 #]=======================================================================]
 
+set(Fontconfig_FOUND 1)
+set(Fontconfig_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/fontconfig
+    )
+
+return()
+
 # TODO: Remove when cmake_minimum_version bumped to 3.14.
 
 find_package(PkgConfig QUIET)

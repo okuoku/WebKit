@@ -28,6 +28,15 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+set(LIBSOUP_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/libsoup
+    /home/oku/yocto-work/webkit/test/libsoup/libsoup
+    /home/oku/yocto-work/webkit/test/libsoup/libsoup/server
+    )
+set(LIBSOUP_FOUND 1)
+
+return()
+
 # LibSoup does not provide an easy way to retrieve its version other than its
 # .pc file, so we need to rely on PC_LIBSOUP_VERSION and REQUIRE the .pc file
 # to be found.

@@ -27,6 +27,13 @@
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF
 # THE POSSIBILITY OF SUCH DAMAGE.
 
+#set(LIBEPOXY_FOUND 1)
+set(LIBEPOXY_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/libepoxy/include
+    )
+
+return()
+
 find_package(PkgConfig QUIET)
 pkg_check_modules(PC_LIBEPOXY QUIET epoxy)
 

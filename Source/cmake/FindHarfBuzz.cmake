@@ -31,6 +31,13 @@
 # HarfBuzz_INCLUDE_DIRS - containg the HarfBuzz headers
 # HarfBuzz_LIBRARIES - containg the HarfBuzz library
 
+set(HarfBuzz_FOUND 1)
+set(HarfBuzz_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/harfbuzz/src
+    )
+
+return()
+
 #[=======================================================================[.rst:
 FindHarfBuzz
 --------------

@@ -53,6 +53,13 @@ This will define the following variables in your project:
 
 #]=======================================================================]
 
+set(WPE_FOUND 1)
+set(WPE_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/libwpe/include
+    )
+
+return()
+
 find_package(PkgConfig QUIET)
 pkg_check_modules(PC_WPE QUIET wpe-1.0)
 set(WPE_COMPILE_OPTIONS ${PC_WPE_CFLAGS_OTHER})

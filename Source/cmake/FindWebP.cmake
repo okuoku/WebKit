@@ -57,6 +57,13 @@ This will define the following variables in your project:
 
 #]=======================================================================]
 
+set(WebP_FOUND 1)
+set(WebP_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/libwebp/src
+    )
+
+return()
+
 find_package(PkgConfig QUIET)
 pkg_check_modules(PC_WEBP QUIET libwebp)
 set(WebP_COMPILE_OPTIONS ${PC_WEBP_CFLAGS_OTHER})

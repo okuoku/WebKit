@@ -52,6 +52,13 @@ This will define the following variables in your project:
 
 #]=======================================================================]
 
+set(SQLite3_FOUND 1)
+set(SQLite3_INCLUDE_DIRS
+    /home/oku/yocto-work/webkit/test/sqlite/src
+    )
+
+return()
+
 # TODO: Remove when cmake_minimum_version bumped to 3.14.
 
 find_package(PkgConfig QUIET)
