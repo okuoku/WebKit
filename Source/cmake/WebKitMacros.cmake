@@ -126,7 +126,8 @@ macro(WEBKIT_FRAMEWORK_DECLARE _target)
 endmacro()
 
 macro(WEBKIT_EXECUTABLE_DECLARE _target)
-    add_executable(${_target} "${CMAKE_BINARY_DIR}/cmakeconfig.h")
+    add_library(${_target} STATIC "${CMAKE_BINARY_DIR}/cmakeconfig.h")
+    #add_executable(${_target} "${CMAKE_BINARY_DIR}/cmakeconfig.h")
 endmacro()
 
 # Private macro for setting the properties of a target.
