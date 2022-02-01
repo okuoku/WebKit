@@ -26,6 +26,8 @@
 #pragma once
 
 #include "SourceID.h"
+#include <wtf/HashMap.h>
+#include <wtf/HashTraits.h>
 #include <wtf/GenericHashKey.h>
 #include <wtf/Vector.h>
 
