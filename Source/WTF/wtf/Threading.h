@@ -176,7 +176,7 @@ public:
     WTF_EXPORT_PRIVATE size_t getRegisters(PlatformRegisters&);
 
 #if USE(PTHREADS)
-#if OS(LINUX)
+#if OS(LINUX) || defined(__CYGWIN__)
     WTF_EXPORT_PRIVATE static ThreadIdentifier currentID();
     ThreadIdentifier id() const { return m_id; }
 #endif
@@ -358,7 +358,7 @@ protected:
 #elif OS(DARWIN)
     mach_port_t m_platformThread { MACH_PORT_NULL };
 #elif USE(PTHREADS)
-#if OS(LINUX)
+#if OS(LINUX) || defined(__CYGWIN__)
     ThreadIdentifier m_id { 0 };
 #endif
     PlatformRegisters* m_platformRegisters { nullptr };

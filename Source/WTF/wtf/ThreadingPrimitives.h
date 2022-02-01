@@ -57,7 +57,7 @@ using PlatformThreadHandle = pthread_t;
 using PlatformMutex = pthread_mutex_t;
 using PlatformCondition = pthread_cond_t;
 using ThreadSpecificKey = pthread_key_t;
-#if OS(LINUX)
+#if OS(LINUX) || defined(__CYGWIN__)
 using ThreadIdentifier = pid_t;
 #endif
 #elif OS(WINDOWS)
@@ -116,7 +116,8 @@ private:
 
 #if USE(PTHREADS)
 
-static constexpr ThreadSpecificKey InvalidThreadSpecificKey = PTHREAD_KEYS_MAX;
+//static constexpr ThreadSpecificKey InvalidThreadSpecificKey = PTHREAD_KEYS_MAX;
+static constexpr ThreadSpecificKey InvalidThreadSpecificKey = 0;
 
 inline void threadSpecificKeyCreate(ThreadSpecificKey* key, void (*destructor)(void *))
 {
