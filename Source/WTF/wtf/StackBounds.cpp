@@ -1,3 +1,4 @@
+#define _GNU_SOURCE 1 // pthread_getattr_np
 /*
  *  Copyright (C) 2003-2019 Apple Inc. All rights reserved.
  *  Copyright (C) 2007 Eric Seidel <eric@webkit.org>
