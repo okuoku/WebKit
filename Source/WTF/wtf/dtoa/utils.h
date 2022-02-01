@@ -31,6 +31,7 @@
 #include <wtf/Assertions.h>
 #include <cstdlib>
 #include <cstring>
+extern "C" size_t strnlen(const char *, size_t);
 
 #ifndef UNIMPLEMENTED
 #define UNIMPLEMENTED() ASSERT_NOT_REACHED()
