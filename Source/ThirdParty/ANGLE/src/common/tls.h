@@ -39,7 +39,11 @@ typedef DWORD TLSIndex;
 #    include <pthread.h>
 #    include <semaphore.h>
 typedef pthread_key_t TLSIndex;
+#ifdef __CYGWIN__
+#    define TLS_INVALID_INDEX (reinterpret_cast<TLSIndex>(-1))
+#else
 #    define TLS_INVALID_INDEX (static_cast<TLSIndex>(-1))
+#endif
 #else
 #    error Unsupported platform.
 #endif

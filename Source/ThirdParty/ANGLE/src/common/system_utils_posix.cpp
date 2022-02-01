@@ -1,3 +1,4 @@
+#define _GNU_SOURCE 1 // Dl_info
 //
 // Copyright 2018 The ANGLE Project Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
@@ -11,7 +12,6 @@
 
 #include <array>
 #include <iostream>
-
 #include <dlfcn.h>
 #ifdef ANGLE_PLATFORM_FUCHSIA
 #    include <zircon/process.h>
