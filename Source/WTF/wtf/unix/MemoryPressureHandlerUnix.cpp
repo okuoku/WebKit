@@ -35,7 +35,7 @@
 #include <wtf/MemoryFootprint.h>
 #include <wtf/text/WTFString.h>
 
-#if OS(LINUX)
+#if OS(LINUX) || defined(__CYGWIN__)
 #include <wtf/linux/CurrentProcessMemoryStatus.h>
 #elif OS(FREEBSD)
 #include <sys/sysctl.h>
@@ -108,7 +108,7 @@ void MemoryPressureHandler::holdOff(Seconds seconds)
 
 static size_t processMemoryUsage()
 {
-#if OS(LINUX)
+#if OS(LINUX) || defined(__CYGWIN__)
     ProcessMemoryStatus memoryStatus;
     currentProcessMemoryStatus(memoryStatus);
     return (memoryStatus.resident - memoryStatus.shared);
