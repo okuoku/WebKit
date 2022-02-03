@@ -97,6 +97,13 @@ if (DEBUG_FISSION)
     endif ()
 endif ()
 
+if (CYGWIN)
+    # Strip debug information for now
+    string(APPEND CMAKE_EXE_LINKER_FLAGS " -Wl,-S")
+    string(APPEND CMAKE_SHARED_LINKER_FLAGS " -Wl,-S")
+    string(APPEND CMAKE_MODULE_LINKER_FLAGS " -Wl,-S")
+endif()
+
 set(GCC_OFFLINEASM_SOURCE_MAP_DEFAULT OFF)
 if (CMAKE_BUILD_TYPE STREQUAL "Debug" OR CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
     set(GCC_OFFLINEASM_SOURCE_MAP_DEFAULT ON)
