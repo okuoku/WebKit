@@ -28,6 +28,7 @@
 #include "FrameSelection.h"
 #include "GraphicsContext.h"
 #include "HitTestResult.h"
+#include "InlineIteratorLine.h"
 #include "InlineIteratorInlineBox.h"
 #include "LayoutIntegrationLineLayout.h"
 #include "LegacyInlineElementBox.h"
