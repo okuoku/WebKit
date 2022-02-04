@@ -50,9 +50,14 @@ find_library(GLIB_LIBRARIES
           ${PC_GLIB_LIBRARY_DIRS}
 )
 
+# FIXME: Handle multiple libraries returned from find_library
+
+list(GET GLIB_LIBRARIES 0 GLIB_LIBRARIES0)
+
 # Files in glib's main include path may include glibconfig.h, which,
 # for some odd reason, is normally in $LIBDIR/glib-2.0/include.
-get_filename_component(_GLIB_LIBRARY_DIR ${GLIB_LIBRARIES} PATH)
+get_filename_component(_GLIB_LIBRARY_DIR ${GLIB_LIBRARIES0} PATH)
+unset(GLIB_LIBRARIES0)
 find_path(GLIBCONFIG_INCLUDE_DIR
     NAMES glibconfig.h
     HINTS ${PC_LIBDIR} ${PC_LIBRARY_DIRS} ${_GLIB_LIBRARY_DIR}
