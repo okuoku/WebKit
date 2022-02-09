@@ -804,7 +804,7 @@
    disable both the use of unified Config record and config freezing for the
    Windows port.
 */
-#if OS(WINDOWS)
+#if OS(WINDOWS) || defined(__CYGWIN__)
 #define ENABLE_UNIFIED_AND_FREEZABLE_CONFIG_RECORD 0
 #else
 #define ENABLE_UNIFIED_AND_FREEZABLE_CONFIG_RECORD 1
